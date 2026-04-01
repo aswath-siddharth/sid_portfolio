@@ -1,8 +1,4 @@
-"use client";
-import styles from './ExperienceSection.module.css';
-import { Calendar, Briefcase } from 'lucide-react';
-import Tilt from 'react-parallax-tilt';
-import { motion } from 'framer-motion';
+import { Briefcase } from 'lucide-react';
 
 const experiences = [
   {
@@ -32,51 +28,41 @@ const experiences = [
 ];
 
 export default function ExperienceSection() {
-  const itemVariants = {
-    hidden: { opacity: 0, x: 50 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
-  };
-
   return (
-    <section id="experience" className={`section ${styles.experienceSection}`}>
-      <div className="container">
-        <motion.div 
-          className={styles.header}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="title-section">experience.</h2>
-        </motion.div>
-        
-        <div className={styles.timeline}>
-          {experiences.map((exp, index) => (
-            <motion.div 
-              key={index} 
-              className={styles.timelineItem}
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
-            >
-              <div className={styles.timelineDot}></div>
-              <div className={styles.timelineContent}>
-                <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3} perspective={2000} className={styles.tiltWrapper}>
-                  <div className={`stark-card ${styles.card}`}>
-                    <h3 className={styles.role}>{exp.role}</h3>
-                    <div className={styles.meta}>
-                      <span className={styles.metaItem}><Briefcase size={16}/> {exp.company}</span>
-                      <span className={styles.metaItem}><Calendar size={16}/> {exp.duration}</span>
-                    </div>
-                    <p className={styles.desc}>{exp.desc}</p>
-                  </div>
-                </Tilt>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <div id="experience" className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <Briefcase className="h-6 w-6 flex-none fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500" />
+        <span className="ml-3">Experience</span>
+      </h2>
+      <ol className="mt-6 space-y-4 text-sm/6 text-zinc-600 dark:text-zinc-400">
+        {experiences.map((exp, idx) => (
+          <li key={idx} className="flex gap-4">
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+               <span className="font-bold text-zinc-500">{exp.company.charAt(0)}</span>
+            </div>
+            <dl className="flex flex-auto flex-wrap gap-x-2">
+              <dt className="sr-only">Company</dt>
+              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                {exp.company}
+              </dd>
+              <dt className="sr-only">Role</dt>
+              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+                {exp.role}
+              </dd>
+              <dt className="sr-only">Date</dt>
+              <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500 whitespace-nowrap">
+                {exp.duration}
+              </dd>
+              <dd className="w-full mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                 {exp.desc}
+              </dd>
+            </dl>
+          </li>
+        ))}
+      </ol>
+      <a href="/Aswath_Siddharth_R_Resume.pdf" target="_blank" className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 w-full mt-6">
+         Download CV
+      </a>
+    </div>
   );
 }

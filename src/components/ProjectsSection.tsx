@@ -1,9 +1,5 @@
-"use client";
-import styles from './ProjectsSection.module.css';
-import { ExternalLink, Code } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
-import Tilt from 'react-parallax-tilt';
-import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -46,79 +42,42 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
-  };
-
   return (
-    <section id="projects" className={`section ${styles.projectsSection}`}>
-      <div className="container">
-        <motion.div 
-          className={styles.header}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="title-section">featured projects.</h2>
-        </motion.div>
-        
-        <motion.div 
-          className={styles.grid}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {projects.map((proj, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <Tilt 
-                tiltMaxAngleX={5} 
-                tiltMaxAngleY={5} 
-                perspective={2000} 
-                scale={1.02} 
-                transitionSpeed={1500} 
-                className={styles.tiltWrapper}
-              >
-                <div className={`stark-card ${styles.projectCard}`}>
-                  <div className={styles.cardHeader}>
-                    <div className={styles.iconBox}>
-                      <Code size={24} />
-                    </div>
-                    <div className={styles.links}>
-                      {proj.github && (
-                        <a href={proj.github} target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                          <FaGithub size={20} />
-                        </a>
-                      )}
-                      {proj.link && (
-                        <a href={proj.link} target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                          <ExternalLink size={20} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className={styles.projectTitle}>{proj.title}</h3>
-                  <p className={styles.projectDesc}>{proj.desc}</p>
-                  <div className={styles.tags}>
-                    {proj.tags.map(tag => (
-                      <span key={tag} className={styles.tag}>{tag}</span>
-                    ))}
-                  </div>
-                </div>
-              </Tilt>
-            </motion.div>
-          ))}
-        </motion.div>
+    <section id="projects" className="py-10">
+      <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-12">
+        Featured Projects
+      </h2>
+      <div className="grid grid-cols-1 gap-x-12 gap-y-16 lg:grid-cols-2">
+        {projects.map((proj, idx) => (
+          <article key={idx} className="group relative flex flex-col items-start transition hover:bg-zinc-50 dark:hover:bg-zinc-800/50 p-6 -m-6 rounded-2xl">
+            <h3 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+              <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50 bg-zinc-50 border border-zinc-100 dark:border-zinc-800" />
+              <span className="relative z-10">{proj.title}</span>
+            </h3>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 leading-6">
+              {proj.desc}
+            </p>
+            <div className="relative z-10 mt-4 flex flex-wrap gap-2 text-xs font-medium">
+              {proj.tags.map(tag => (
+                <span key={tag} className="text-teal-500 bg-teal-50 dark:bg-teal-500/10 dark:text-teal-400 px-2.5 py-0.5 rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="relative z-10 mt-6 flex gap-4 text-sm font-medium text-zinc-400 dark:text-zinc-500">
+              {proj.github && (
+                <a href={proj.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-teal-500 dark:hover:text-teal-400 transition">
+                  <FaGithub size={16} /> GitHub
+                </a>
+              )}
+              {proj.link && (
+                <a href={proj.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-teal-500 dark:hover:text-teal-400 transition">
+                  <ExternalLink size={16} /> Live Demo
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

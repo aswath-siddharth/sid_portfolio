@@ -1,0 +1,85 @@
+Aswath Siddharth R.
+/envel⌢peaswathsiddharthrajendran@gmail.com |♂¶obile6369196019 | /githubgithub.com/aswath-siddharth
+/linkedinlinkedin.com/in/aswath-siddharth-rajendran
+Software Engineering intern with experience in building distributed systems, lightweight ML pipelines, and end-to-end
+applications. Skilled in Python, C++, and modern web technologies, with a focus on creating reliable, scalable, and efficient
+software. Driven to apply engineering principles and learn new technologies to build impactful solutions at scale.
+Skills
+Languages:C, C++, Python, Java, JavaScript/TypeScript, SQL, Haskell
+Software Engineering & Systems:Data Structures & Algorithms, Operating Systems, Computer Networks, Distributed
+Systems (Edge–Fog–Cloud), API Design, Event-Driven Architecture
+AI & ML:TensorFlow, Computer Vision, Federated Learning, Neuroevolution, Reinforcement Learning, RAG (Retrieval-
+Augmented Generation)
+Technologies & Frameworks:Docker, MQTT, Django, React, Tailwind CSS, Streamlit, Electron, Google Earth Engine
+Tools & Platforms:Git, VS Code, Linux, Power BI/Tableau, Azure (Fundamentals)
+Databases:CockroachDB, SQLite, Firebase
+Education
+Amrita Vishwa Vidyapeetham, CoimbatoreAug 2023 – Jun 2027
+B.Tech in Computer Science & Engineering(CGPA: 6.64/10)
+Relevant Coursework:OOP, Data Structures & Algorithms, Operating Systems, Computer Networks, Machine Learning,
+Advanced Algorithms, Image Processing
+Projects
+•Grocery Billing System(GitHub)(Electron + React + TypeScript):Developed a complete desktop billing
+solution supporting Tamil invoice printing, GST automation, and schema-free persistent storage using IndexedDB (Dexie).
+Implemented customer/item management, multi–financial-year separation, and monthly GST/Sales reporting. Designed
+a fast billing workflow with automatic SGST/CGST computation, keyboard-first inputs, and multi-language UI support.
+•ME-FLEET – Federated Fleet Anomaly Detection(GitHub)(Edge–Fog–Cloud):Built a distributed simulation
+framework with Dockerized edge nodes streaming telemetry to a fog node via MQTT. Implemented z-score anomaly
+detection with multi-exit processing, fault tolerance, and recovery for dropped packets. Developed a Streamlit cloud
+dashboard to visualize fleet health, actuator responses, and latency metrics. Designed the system for modular scalability
+with future DTW clustering and hierarchical scoring support.
+•Secure API Access – Token Authorization System(GitHub)(Flask + RBAC + OTP):Built a secure
+API system implementing token-based authorization with Role-Based Access Control (RBAC) and OTP-based login
+verification. Used bcrypt password hashing with SQLite for user management, and HMAC-SHA256 signatures to validate
+token integrity and prevent tampering. Added replay protection using timestamp-based expiry validation and secured
+ADMIN-only endpoints.
+•GYAN (formerly SATCHI) – Project Repository & Event Registration Portal(Live |GitHub)(Django +
+React + CockroachDB):Developed a Django + React platform for academic project submissions, evaluations, and
+event registrations. Integrated CockroachDB for scalable data handling, secure authentication, and validation workflows.
+Built analytics dashboards to improve transparency and streamline multi-department operations.
+•AI Crop Disease Diagnosis System(GitHub)(TensorFlow + FastAPI + Flutter):Developed an end-to-end crop
+disease classification system with a trained deep learning model and an API-backed deployment workflow. Implemented
+preprocessing and inference pipeline with a FastAPI backend and Flutter-based frontend integration for real-time
+predictions.
+•Automated Bone Fracture Detection in X-ray Images(GitHub)(DIP + CNN):Engineered a hybrid Digital
+Image Processing + CNN pipeline using Gaussian/median filters, CLAHE, Canny, morphological closing, and adaptive
+thresholding to enhance fracture patterns. Trained a compact TensorFlow model achieving90.3% accuracyon the
+MURA dataset. Delivered explainable visual breakdowns, complete Jupyter implementation, and final documentation.
+•Findeth – Campus Navigation System(GitHub)(Leaflet + JavaScript):Developed an interactive campus
+mapping application providing route guidance, location metadata, and user feedback. Implemented responsive UI with
+dynamic map layers and real-time route rendering for improved navigation across campus.
+Research & Publications (Ongoing)
+•Neuroevolution for Lightweight Neural NetworksTitle: “Evolving Compact Neural Architectures for Edge Devices
+Using Multi-Objective Evolutionary Algorithms”Explores the use ofNSGA-IIandMOEA/Dto evolve compact neural
+architectures balancing model accuracy and size. Implemented usingTensorFlowand theDEAP evolutionary
+computation library. Produces a Pareto front of models optimized formobile and embedded inferencewith
+energy efficiency and trade-off visualization.
+•ComparativeAnalysisofGeneticAlgorithmandReinforcementLearningonKnapsackProblemsConducting
+a comparative performance study ofGAandReinforcement Learning (Q-Learning)techniques on both fractional
+and 0/1 knapsack formulations. Focused onconvergence speed, solution quality, and generalization efficiency
+under varying resource constraints.
+Experience
+Amrita Vishwa Vidyapeetham – Institution’s Innovation Council (IIC)Jul 2025 – Present
+Student Council Member
+•Supported innovation-driven student initiatives, event coordination, and internal operations under IIC.
+•Contributed to planning and execution of council activities with effective collaboration and task tracking.
+Amrita Vishwa Vidyapeetham – Institution’s Innovation Council (IIC)Oct 2025 – Present
+Technical Lead
+•Led technical planning and execution for council workflows and event-based technical requirements.
+•Coordinated development tasks, team collaboration, and smooth on-ground operations.
+Amrita – Model United Nations Society (A-MUNSO)Sep 2024 – Present
+Co-Head, Web & Tech
+•Managed web development and technical operations for MUN workflows and event execution.
+•Coordinated team deliverables, task delegation, and cross-team collaboration for smooth operations.
+Anokha (Amrita University Techfest)Aug 2025 – Jan 2026
+Co-Head, Techfair & Exhibitions
+•Coordinated the planning and execution of Techfair & Exhibition events.
+•Managed team workflows and ensured smooth operations through effective collaboration and task tracking.
+GalaxyZ SpaceAug 2025 – Sep 2025
+Multimedia Designer (Internship)
+•Designed digital media creatives and assisted in visual content production for social platforms.
+•Supported branding and content design workflows with consistent design quality.
+Awards & Certificates
+•Special Mention – Delegate of India, UNHRCKCT MUN, 2025
+•Certificate of Appreciation – Mega Tinkering DayAtal Innovation Mission, NITI Aayog, 2025
+•IA Online Training CertificateMHRD Innovation Cell, Amrita Vishwa Vidyapeetham, 11 Aug 2025

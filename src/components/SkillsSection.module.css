@@ -1,0 +1,70 @@
+.skillsSection {
+  position: relative;
+  background-color: var(--background-secondary);
+}
+
+.header {
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--foreground);
+}
+
+.line {
+  height: 1px;
+  flex: 1;
+  background: var(--glass-border);
+  max-width: 300px;
+  order: -1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.categoryTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.chipContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  background: rgba(45, 212, 191, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row-reverse;
+  }
+  .line {
+    order: 0;
+  }
+}

@@ -5,166 +5,28 @@
 ▲ Next.js 16.2.2 (Turbopack)
 
   Creating an optimized production build ...
+✓ Compiled successfully in 2.9s
+  Running TypeScript ...
+Failed to type check.
 
-> Build error occurred
-Error: Turbopack build failed with 6 errors:
-./src/components/HeroSection.tsx:3:1
-Export Github doesn't exist in target module
-  [90m1 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m'next/image'[0m;
-  [90m2 |[0m [36mimport[0m styles [36mfrom[0m [32m'./HeroSection.module.css'[0m;
-[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mGithub[0m, [33mLinkedin[0m, [33mMail[0m, [33mFileText[0m } [36mfrom[0m [32m'lucide-react'[0m;
-  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
-  [90m4 |[0m
-  [90m5 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHeroSection[0m() {
-  [90m6 |[0m   [36mreturn[0m (
+./src/components/ExperienceSection.tsx:58:15
+Type error: Type '{ hidden: { opacity: number; x: number; }; show: { opacity: number; x: number; transition: { duration: number; ease: string; }; }; }' is not assignable to type 'Variants'.
+  Property 'show' is incompatible with index signature.
+    Type '{ opacity: number; x: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+      Type '{ opacity: number; x: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+        Type '{ opacity: number; x: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+          Types of property 'transition' are incompatible.
+            Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+              Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+                Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+                  Types of property 'ease' are incompatible.
+                    Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
 
-The export Github was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-client] (ecmascript).
-Did you mean to import Gift?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  Client Component Browser:
-    ./src/components/HeroSection.tsx [Client Component Browser]
-    ./src/app/page.tsx [Client Component Browser]
-    ./src/app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/components/HeroSection.tsx [Client Component SSR]
-    ./src/app/page.tsx [Client Component SSR]
-    ./src/app/page.tsx [Server Component]
-
-
-./src/components/HeroSection.tsx:3:1
-Export Github doesn't exist in target module
-  [90m1 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m'next/image'[0m;
-  [90m2 |[0m [36mimport[0m styles [36mfrom[0m [32m'./HeroSection.module.css'[0m;
-[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mGithub[0m, [33mLinkedin[0m, [33mMail[0m, [33mFileText[0m } [36mfrom[0m [32m'lucide-react'[0m;
-  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
-  [90m4 |[0m
-  [90m5 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHeroSection[0m() {
-  [90m6 |[0m   [36mreturn[0m (
-
-The export Github was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-ssr] (ecmascript).
-Did you mean to import Gift?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  Client Component Browser:
-    ./src/components/HeroSection.tsx [Client Component Browser]
-    ./src/app/page.tsx [Client Component Browser]
-    ./src/app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/components/HeroSection.tsx [Client Component SSR]
-    ./src/app/page.tsx [Client Component SSR]
-    ./src/app/page.tsx [Server Component]
-
-
-./src/components/ProjectsSection.tsx:2:1
-Export Github doesn't exist in target module
-  [90m1 |[0m [36mimport[0m styles [36mfrom[0m [32m'./ProjectsSection.module.css'[0m;
-[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mGithub[0m, [33mExternalLink[0m, [33mCode[0m } [36mfrom[0m [32m'lucide-react'[0m;
-  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
-  [90m3 |[0m
-  [90m4 |[0m [36mconst[0m projects = [
-  [90m5 |[0m   {
-
-The export Github was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-client] (ecmascript).
-Did you mean to import Gift?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  Client Component Browser:
-    ./src/components/ProjectsSection.tsx [Client Component Browser]
-    ./src/app/page.tsx [Client Component Browser]
-    ./src/app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/components/ProjectsSection.tsx [Client Component SSR]
-    ./src/app/page.tsx [Client Component SSR]
-    ./src/app/page.tsx [Server Component]
-
-
-./src/components/ProjectsSection.tsx:2:1
-Export Github doesn't exist in target module
-  [90m1 |[0m [36mimport[0m styles [36mfrom[0m [32m'./ProjectsSection.module.css'[0m;
-[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mGithub[0m, [33mExternalLink[0m, [33mCode[0m } [36mfrom[0m [32m'lucide-react'[0m;
-  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
-  [90m3 |[0m
-  [90m4 |[0m [36mconst[0m projects = [
-  [90m5 |[0m   {
-
-The export Github was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-ssr] (ecmascript).
-Did you mean to import Gift?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  Client Component Browser:
-    ./src/components/ProjectsSection.tsx [Client Component Browser]
-    ./src/app/page.tsx [Client Component Browser]
-    ./src/app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/components/ProjectsSection.tsx [Client Component SSR]
-    ./src/app/page.tsx [Client Component SSR]
-    ./src/app/page.tsx [Server Component]
-
-
-./src/components/HeroSection.tsx:3:1
-Export Linkedin doesn't exist in target module
-  [90m1 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m'next/image'[0m;
-  [90m2 |[0m [36mimport[0m styles [36mfrom[0m [32m'./HeroSection.module.css'[0m;
-[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mGithub[0m, [33mLinkedin[0m, [33mMail[0m, [33mFileText[0m } [36mfrom[0m [32m'lucide-react'[0m;
-  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
-  [90m4 |[0m
-  [90m5 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHeroSection[0m() {
-  [90m6 |[0m   [36mreturn[0m (
-
-The export Linkedin was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-client] (ecmascript).
-Did you mean to import Link?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  Client Component Browser:
-    ./src/components/HeroSection.tsx [Client Component Browser]
-    ./src/app/page.tsx [Client Component Browser]
-    ./src/app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/components/HeroSection.tsx [Client Component SSR]
-    ./src/app/page.tsx [Client Component SSR]
-    ./src/app/page.tsx [Server Component]
-
-
-./src/components/HeroSection.tsx:3:1
-Export Linkedin doesn't exist in target module
-  [90m1 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m'next/image'[0m;
-  [90m2 |[0m [36mimport[0m styles [36mfrom[0m [32m'./HeroSection.module.css'[0m;
-[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mGithub[0m, [33mLinkedin[0m, [33mMail[0m, [33mFileText[0m } [36mfrom[0m [32m'lucide-react'[0m;
-  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
-  [90m4 |[0m
-  [90m5 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHeroSection[0m() {
-  [90m6 |[0m   [36mreturn[0m (
-
-The export Linkedin was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-ssr] (ecmascript).
-Did you mean to import Link?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  Client Component Browser:
-    ./src/components/HeroSection.tsx [Client Component Browser]
-    ./src/app/page.tsx [Client Component Browser]
-    ./src/app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/components/HeroSection.tsx [Client Component SSR]
-    ./src/app/page.tsx [Client Component SSR]
-    ./src/app/page.tsx [Server Component]
-
-
-    at <unknown> (./src/components/HeroSection.tsx:3:1)
-    at <unknown> (./src/components/HeroSection.tsx:3:1)
-    at <unknown> (./src/components/ProjectsSection.tsx:2:1)
-    at <unknown> (./src/components/ProjectsSection.tsx:2:1)
-    at <unknown> (./src/components/HeroSection.tsx:3:1)
-    at <unknown> (./src/components/HeroSection.tsx:3:1)
+  [90m56 |[0m               key={index} 
+  [90m57 |[0m               className={styles.timelineItem}
+[31m[1m>[0m [90m58 |[0m               variants={itemVariants}
+  [90m   |[0m               [31m[1m^[0m
+  [90m59 |[0m               initial=[32m"hidden"[0m
+  [90m60 |[0m               whileInView=[32m"show"[0m
+  [90m61 |[0m               viewport={{ once: [36mtrue[0m, margin: [32m"-100px"[0m }}
+Next.js build worker exited with code: 1 and signal: null

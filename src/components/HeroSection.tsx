@@ -1,84 +1,49 @@
 "use client";
-import Image from 'next/image';
 import styles from './HeroSection.module.css';
 import { Mail, FileText } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
 const ThreeScene = dynamic(() => import('./ThreeScene'), { ssr: false });
 
 export default function HeroSection() {
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-  };
+  const { scrollY } = useScroll();
+  const yText = useTransform(scrollY, [0, 500], [0, 150]);
 
   return (
-    <section className={`section ${styles.hero}`}>
+    <section className={styles.hero}>
+      {/* Top Header Navigation Overlay */}
+      <header className={styles.nav}>
+        <div className={styles.logo}>aswath_</div>
+        <div className={styles.navActions}>
+          <a href="mailto:aswathsiddharthrajendran@gmail.com" className="pill-btn">
+            Chat with Me <Mail size={16} />
+          </a>
+          <a href="/Aswath_Siddharth_R_Resume.pdf" target="_blank" className="pill-btn pill-btn-solid">
+            Resume <FileText size={16} />
+          </a>
+        </div>
+      </header>
+
+      {/* Epicenter 3D Canvas */}
       <div className={styles.canvasContainer}>
         <ThreeScene />
       </div>
-      <motion.div 
-        className={`container ${styles.container}`}
-        variants={staggerContainer}
-        initial="hidden"
-        animate="show"
-      >
-        <div className={styles.content}>
-          <motion.p variants={fadeUp} className={styles.greeting}>Hi, I'm</motion.p>
-          <motion.h1 variants={fadeUp} className={styles.name}>Aswath Siddharth R.</motion.h1>
-          <motion.h2 variants={fadeUp} className={styles.role}>
-            <span className="gradient-text">Software Engineering Intern</span>
-          </motion.h2>
-          <motion.p variants={fadeUp} className={styles.description}>
-            Building distributed systems, lightweight ML pipelines, and end-to-end applications that solve real-world problems.
-          </motion.p>
-          <motion.div variants={fadeUp} className={styles.actions}>
-            <a href="mailto:aswathsiddharthrajendran@gmail.com" className="btn-primary" style={{ pointerEvents: 'auto' }}>
-              <Mail size={20} /> Contact Me
-            </a>
-            <a href="/Aswath_Siddharth_R_Resume.pdf" target="_blank" className="btn-secondary" style={{ pointerEvents: 'auto' }}>
-              <FileText size={20} /> Resume
-            </a>
-          </motion.div>
-          <motion.div variants={fadeUp} className={styles.socials} style={{ pointerEvents: 'auto' }}>
-            <a href="https://github.com/aswath-siddharth" target="_blank" rel="noopener noreferrer">
-              <FaGithub size={24} />
-            </a>
-            <a href="https://linkedin.com/in/aswath-siddharth-rajendran" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin size={24} />
-            </a>
-          </motion.div>
-        </div>
-        <motion.div 
-          className={styles.imageContainer}
-          initial={{ opacity: 0, scale: 0.8, rotateY: 30 }}
-          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          style={{ pointerEvents: 'auto' }}
-        >
-          <div className={styles.imageGlow}></div>
-          <Image 
-            src="/profile.jpg" 
-            alt="Aswath Siddharth R." 
-            width={320} 
-            height={320} 
-            className={styles.image}
-            priority
-          />
-        </motion.div>
-      </motion.div>
+
+      {/* Massive Typography overlapping the 3D Object partially */}
+      <div className={styles.typographyContainer}>
+        <motion.h1 style={{ y: yText }} animate={{ opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }} className={styles.massiveText}>
+          aswath
+        </motion.h1>
+      </div>
+
+      {/* Bottom Subtitle anchored */}
+      <div className={styles.bottomSubtitle}>
+        <p>Software Engineering Intern</p>
+        <p style={{ color: "var(--foreground-muted)", fontWeight: "normal", fontSize: "1rem", marginTop: "0.5rem"}}>
+          Building distributed systems & lightweight ML pipelines.
+        </p>
+      </div>
     </section>
   );
 }

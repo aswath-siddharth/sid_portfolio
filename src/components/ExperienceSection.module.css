@@ -1,24 +1,10 @@
 .experienceSection {
   position: relative;
+  background-color: var(--background);
 }
 
 .header {
   margin-bottom: 4rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.title {
-  font-size: 2.5rem;
-  color: var(--foreground);
-}
-
-.line {
-  height: 1px;
-  flex: 1;
-  background: var(--glass-border);
-  max-width: 300px;
 }
 
 .timeline {
@@ -34,7 +20,7 @@
   bottom: 0;
   left: 20px;
   width: 2px;
-  background: var(--glass-border);
+  background: var(--border);
 }
 
 .timelineItem {
@@ -56,7 +42,6 @@
   border-radius: 50%;
   background: var(--background);
   border: 4px solid var(--primary);
-  box-shadow: 0 0 10px rgba(45, 212, 191, 0.5);
 }
 
 .timelineContent {
@@ -69,26 +54,28 @@
 }
 
 .card {
-  padding: 1.5rem;
+  padding: 2.5rem;
   transform-style: preserve-3d;
 }
 
 .role {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--foreground);
-  margin-bottom: 0.5rem;
-  font-family: var(--font-heading);
-  transform: translateZ(30px);
+  color: var(--primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  transform: translateZ(40px);
 }
 
 .meta {
   display: flex;
   gap: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
+  margin-bottom: 1.5rem;
+  color: var(--foreground-muted);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   transform: translateZ(20px);
 }
 
@@ -99,6 +86,7 @@
 }
 
 .desc {
+  font-size: 1.125rem;
   color: var(--foreground-muted);
   line-height: 1.6;
   transform: translateZ(10px);

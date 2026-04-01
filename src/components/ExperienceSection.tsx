@@ -34,7 +34,7 @@ const experiences = [
 export default function ExperienceSection() {
   const itemVariants = {
     hidden: { opacity: 0, x: 50 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
   };
 
   return (
@@ -47,8 +47,7 @@ export default function ExperienceSection() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className={styles.title}>Experience</h2>
-          <div className={styles.line}></div>
+          <h2 className="title-section">experience.</h2>
         </motion.div>
         
         <div className={styles.timeline}>
@@ -63,12 +62,12 @@ export default function ExperienceSection() {
             >
               <div className={styles.timelineDot}></div>
               <div className={styles.timelineContent}>
-                <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1000} className={styles.tiltWrapper}>
-                  <div className={`glass-card ${styles.card}`}>
+                <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3} perspective={2000} className={styles.tiltWrapper}>
+                  <div className={`stark-card ${styles.card}`}>
                     <h3 className={styles.role}>{exp.role}</h3>
                     <div className={styles.meta}>
-                      <span className={styles.metaItem}><Briefcase size={14}/> {exp.company}</span>
-                      <span className={styles.metaItem}><Calendar size={14}/> {exp.duration}</span>
+                      <span className={styles.metaItem}><Briefcase size={16}/> {exp.company}</span>
+                      <span className={styles.metaItem}><Calendar size={16}/> {exp.duration}</span>
                     </div>
                     <p className={styles.desc}>{exp.desc}</p>
                   </div>

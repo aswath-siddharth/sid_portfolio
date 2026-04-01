@@ -26,13 +26,13 @@ const projects = [
     github: "https://github.com/aswath-siddharth"
   },
   {
-    title: "AI Crop Disease Diagnosis",
+    title: "AI Crop Disease",
     tags: ["TensorFlow", "FastAPI", "Flutter"],
     desc: "End-to-end crop disease classification system with a trained deep learning model deployed via an API-backed workflow directly to a mobile frontend.",
     github: "https://github.com/aswath-siddharth"
   },
   {
-    title: "Secure API Access Auth",
+    title: "Secure Auth API",
     tags: ["Flask", "RBAC", "OTP"],
     desc: "Token-based authorization system with Role-Based Access Control, OTP verification, bcrypt hashing, and replay-protection logic.",
     github: "https://github.com/aswath-siddharth"
@@ -56,7 +56,7 @@ export default function ProjectsSection() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
   };
 
   return (
@@ -69,8 +69,7 @@ export default function ProjectsSection() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
         >
-          <div className={styles.line}></div>
-          <h2 className={styles.title}>Featured Projects</h2>
+          <h2 className="title-section">featured projects.</h2>
         </motion.div>
         
         <motion.div 
@@ -83,28 +82,27 @@ export default function ProjectsSection() {
           {projects.map((proj, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Tilt 
-                tiltMaxAngleX={10} 
-                tiltMaxAngleY={10} 
-                perspective={1000} 
+                tiltMaxAngleX={5} 
+                tiltMaxAngleY={5} 
+                perspective={2000} 
                 scale={1.02} 
-                transitionSpeed={2000} 
+                transitionSpeed={1500} 
                 className={styles.tiltWrapper}
               >
-                <div className={`glass-card ${styles.projectCard}`}>
-                  <div className={styles.cardGlow}></div>
+                <div className={`stark-card ${styles.projectCard}`}>
                   <div className={styles.cardHeader}>
                     <div className={styles.iconBox}>
-                      <Code size={20} />
+                      <Code size={24} />
                     </div>
                     <div className={styles.links}>
                       {proj.github && (
                         <a href={proj.github} target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                          <FaGithub size={18} />
+                          <FaGithub size={20} />
                         </a>
                       )}
                       {proj.link && (
                         <a href={proj.link} target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                          <ExternalLink size={18} />
+                          <ExternalLink size={20} />
                         </a>
                       )}
                     </div>

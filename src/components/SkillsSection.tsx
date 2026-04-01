@@ -34,8 +34,7 @@ export default function SkillsSection() {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Technical Skills</h2>
-          <div className={styles.line}></div>
+          <h2 className="title-section">technical skills.</h2>
         </motion.div>
         <motion.div 
           className={styles.grid}
@@ -45,7 +44,7 @@ export default function SkillsSection() {
           viewport={{ once: true, amount: 0.2 }}
         >
           {Object.entries(skills).map(([category, items]) => (
-            <motion.div key={category} variants={itemVariants} className={`glass-card ${styles.categoryCard}`} style={{ padding: '1.5rem' }}>
+            <motion.div key={category} variants={itemVariants} className={`stark-card`} style={{ padding: '2.5rem' }}>
               <h3 className={styles.categoryTitle}>{category}</h3>
               <div className={styles.chipContainer}>
                 {items.map((skill) => (

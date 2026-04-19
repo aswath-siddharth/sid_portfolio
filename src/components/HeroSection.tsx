@@ -1,58 +1,96 @@
-import Image from "next/image";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Mail } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from "react-icons/fa";
 
 export default function HeroSection() {
-  const images = [
-    { src: "/photos/DSC09060.jpg", alt: "Aswath standing", rotate: "-rotate-2" },
-    { src: "/photos/IMG_20251108_122554_411.webp", alt: "Aswath portrait", rotate: "rotate-2" },
-    { src: "/photos/20250118_093846.png", alt: "Aswath speaking", rotate: "-rotate-2" },
-    { src: "/photos/IMG_9894.JPG", alt: "Aswath casual", rotate: "rotate-2" },
-  ];
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } },
+  };
 
   return (
-    <div>
-      <div className="mt-32 px-8 sm:px-16 lg:px-24">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software engineer, distributed systems builder, and ML enthusiast.
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Aswath Siddharth R., a Software Engineering Intern currently pursuing my B.Tech in Computer Science at Amrita Vishwa Vidyapeetham. 
-            I focus on building reliable backend systems, lightweight ML pipelines, and impactful end-to-end applications.
-          </p>
-          <div className="mt-6 flex gap-6">
-            <a href="https://github.com/aswath-siddharth" target="_blank" aria-label="GitHub" className="group -m-1 p-1">
-              <FaGithub className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    <section id="about" className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden px-6 lg:px-8 max-w-7xl mx-auto flex flex-col justify-center min-h-[90vh]">
+      {/* Background ambient gradient */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-teal-500/10 to-transparent blur-3xl -z-10 dark:from-teal-900/20" />
+
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="max-w-4xl"
+      >
+        <motion.div variants={item} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-sm font-medium mb-8 ring-1 ring-teal-500/20">
+           <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+           Software Engineering Intern
+        </motion.div>
+
+        <motion.h1 
+          variants={item}
+          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 font-outfit leading-[1.1] mb-8"
+        >
+          Aswath <br />
+          <span className="text-zinc-400 dark:text-zinc-500">Siddharth R.</span>
+        </motion.h1>
+
+        <motion.p 
+          variants={item}
+          className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl font-inter"
+        >
+          I build distributed systems, lightweight ML pipelines, and end-to-end applications.
+          Driven to apply engineering principles and learn new technologies to build impactful solutions at scale.
+        </motion.p>
+
+        <motion.div variants={item} className="mt-12 flex flex-wrap items-center gap-6">
+          <a
+            href="mailto:aswathsiddharthrajendran@gmail.com"
+            className="flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 rounded-full font-medium hover:scale-105 transition-transform font-outfit"
+          >
+            <FaEnvelope className="w-5 h-5" />
+            Contact Me
+          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/aswath-siddharth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+              aria-label="GitHub"
+            >
+              <FaGithub className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com/in/aswath-siddharth-rajendran" target="_blank" aria-label="LinkedIn" className="group -m-1 p-1">
-              <FaLinkedin className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-            </a>
-            <a href="mailto:aswathsiddharthrajendran@gmail.com" aria-label="Mail" className="group -m-1 p-1">
-              <Mail className="h-6 w-6 stroke-zinc-500 transition group-hover:stroke-zinc-600 dark:stroke-zinc-400 dark:group-hover:stroke-zinc-300" />
+            <a
+              href="https://linkedin.com/in/aswath-siddharth-rajendran"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="w-5 h-5" />
             </a>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="mt-16 sm:mt-20">
-        <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-          {images.map((img, idx) => (
-            <div
-              key={idx}
-              className={`relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl ${img.rotate} hover:rotate-0 transition duration-500 hover:scale-105`}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(min-width: 640px) 18rem, 11rem"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+        className="absolute bottom-10 left-6 lg:left-8 text-zinc-400 dark:text-zinc-500 hidden md:block"
+      >
+        <FaArrowDown className="w-6 h-6" />
+      </motion.div>
+    </section>
   );
 }

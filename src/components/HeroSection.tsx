@@ -36,7 +36,7 @@ export default function HeroSection() {
         {/* Extreme Left Vertical Socials (Desktop only) */}
         <motion.div variants={item} className="absolute left-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-6 z-20">
           <a
-            href="https://linkedin.com/in/aswath-siddharth-rajendran"
+            href="https://www.linkedin.com/in/aswath-siddharth-rajendran-4709a0284/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
@@ -90,7 +90,7 @@ export default function HeroSection() {
           
           {/* Mobile Socials (hidden on large displays where vertical socials take over) */}
           <div className="mt-6 flex items-center justify-center gap-4 xl:hidden">
-            <a href="https://linkedin.com/in/aswath-siddharth-rajendran" className="p-2 text-zinc-400 hover:text-teal-500"><FaLinkedin className="w-5 h-5" /></a>
+            <a href="https://www.linkedin.com/in/aswath-siddharth-rajendran-4709a0284/" className="p-2 text-zinc-400 hover:text-teal-500"><FaLinkedin className="w-5 h-5" /></a>
             <a href="https://github.com/aswath-siddharth" className="p-2 text-zinc-400 hover:text-teal-500"><FaGithub className="w-5 h-5" /></a>
             <a href="mailto:aswathsiddharthrajendran@gmail.com" className="p-2 text-zinc-400 hover:text-teal-500"><FaEnvelope className="w-5 h-5" /></a>
           </div>

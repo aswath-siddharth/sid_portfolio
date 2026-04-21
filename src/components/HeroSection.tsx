@@ -75,6 +75,7 @@ export default function HeroSection() {
               height={1200} 
               className="w-full h-auto object-contain drop-shadow-2xl opacity-95"
               priority
+              unoptimized
             />
           </div>
         </motion.div>

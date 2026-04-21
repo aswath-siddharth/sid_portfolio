@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown, FaDownload } from "react-icons/fa";
 import Image from "next/image";
 
 export default function HeroSection() {
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -16,10 +16,11 @@ export default function HeroSection() {
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } },
   };
+
 
   return (
     <section id="about" className="relative w-full min-h-screen overflow-hidden px-6 lg:px-12 mx-auto flex flex-col md:flex-row items-center justify-center">
